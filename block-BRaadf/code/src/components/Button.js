@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import UserContext from "../UserContext";
 
-export default function SwitchButton({ isDarkMode, changeMode }) {
+export default function SwitchButton() {
+  let mode = useContext(UserContext);
+  let isDarkMode = mode.data.isDarkMode;
+  let changeMode = mode.changeMode;
   return (
     <button
       className={`btn ${isDarkMode ? "btn-dark" : "btn-light"}`}

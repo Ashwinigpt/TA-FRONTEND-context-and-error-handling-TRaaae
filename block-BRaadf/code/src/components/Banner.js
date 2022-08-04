@@ -1,6 +1,9 @@
 import React from "react";
+import UserContext from "../UserContext";
 
 class Banner extends React.Component {
+  static contextType = UserContext;
+
   render() {
     let { isDarkMode } = this.props;
     return (
